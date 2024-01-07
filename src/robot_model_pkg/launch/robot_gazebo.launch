@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load SDF file -->
+  <arg name="sdf_model" default="$(find robot_model_pkg)/urdf/CW2_Robot/CW2_Robot/model.sdf"/> <!-- Update the path accordingly -->
+
+  <!-- Load SDF model into Gazebo -->
+  <param name="robot_description" textfile="$(arg sdf_model)" />
+
+  <!-- Launch Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+  </include>
+
+  <!-- Set the robot's initial pose to (0, 0, 0) with no initial velocity -->
+  <param name="robot_initial_pose" value="[0, 0, 0, 0, 0, 0]"/>
+
+  <!-- Spawn the robot model in Gazebo -->
+  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" args="-sdf -model my_robot -param robot_description -x 0 -y 0 -z 0"/>
+
+  <!-- Optionally, you can add other nodes for controlling or interacting with your robot here -->
+</launch>
+

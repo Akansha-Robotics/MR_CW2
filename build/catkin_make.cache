@@ -1,0 +1,2 @@
+robot_model_pkg
+-DCATKIN_DEVEL_PREFIX=/home/akansha12/robot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/akansha12/robot_ws/install -G Unix Makefiles
