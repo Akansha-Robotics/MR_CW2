@@ -1,1 +1,48 @@
+<?xml version="1.0"?>
+<robot>  
+ 
+    <!-- Gazebo configuration - Indicate type of configuration  -->
+  <gazebo>
+
+    <!-- Plugin Name and Library -->
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      
+      <!-- Rate plugin will be updated = 20 times per second -->
+      <updateRate>20</updateRate>
+
+       <!-- Ensure plugin will not always active meaning it can be switched on and off -->
+      <alwaysOn>false</alwaysOn>
+
+      <!-- Legacy mode is off meaning that will ensure that new version of plugin will be used allowing for better compatibility with Gazebo and Ros  -->
+      <legacyMode>false</legacyMode>
+
+      <!-- Setting right and left joints - Required to be named for plugin knows what it is moving-->
+      <rightJoint>right_wheel_joint</rightJoint>
+      <leftJoint>left_wheel_joint</le
+      ftJoint>
+
+      <!-- Setting diameter of wheels which is radius times 2  -->
+      <wheelDiameter>${wheel_radius * 2}</wheelDiameter>
+
+      <!-- Setting separation which means distance between wheels -->
+      <wheelSeparation>${wheel_separation}</wheelSeparation>
+
+      <!-- Setting torque to 20 units which means the rotational force required to move the wheels -->
+      <torque>20</torque>
+
+      <!-- ROS topic for command velocity - allows for use to control movement -->
+      <commandTopic>/robot/controller/cmd_vel</commandTopic>
+
+      <!-- Setting frame robot base -->
+      <robotBaseFrame>base</robotBaseFrame>
+
+      <!-- ROS topic for publishing odometry which calculates distance traveled based on rotation of wheels-->
+      <odometryTopic>/robot/controller/odom</odometryTopic>
+
+      <!-- Setting frame odometry data -->
+      <odometryFrame>odom</odometryFrame>
+    </plugin>
+  </gazebo>
+ 
+</robot>
 
