@@ -18,8 +18,7 @@
 
       <!-- Setting right and left joints - Required to be named for plugin knows what it is moving-->
       <rightJoint>right_wheel_joint</rightJoint>
-      <leftJoint>left_wheel_joint</le
-      ftJoint>
+      <leftJoint>left_wheel_joint</leftJoint>
 
       <!-- Setting diameter of wheels which is radius times 2  -->
       <wheelDiameter>${wheel_radius * 2}</wheelDiameter>
