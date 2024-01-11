@@ -1,1 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Launch file for loading robot model model -->
+
+  <!-- Stops any other online gazebo model from being loaded -->
+  <param name="enable_gazebo_models" value="false"/>
+
+  <!-- Creating robot description for ROS and setting path to take robot model file -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find robot_model_pkg)/urdf/robot.urdf.xacro"/>  
+ 
+  <!-- Robot publisher node for knowing position of robot -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <!-- Joint publisher node for knowing position and controlling joints of robot-->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+  <!-- Spawning robot model with an adjusted position for spawning -->
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot -param robot_description -x 2.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0" output="screen"/>
+
+  <!-- Learning Point: Adjusted position is required to be set as other wise the robot will end up flying to the other side of grid due to collusion as another object is present in the middle -->
+
+</launch>
 
