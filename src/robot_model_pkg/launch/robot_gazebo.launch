@@ -1,1 +1,23 @@
+<?xml version="1.0"?>
+<launch>
 
+  <!-- Launch file for loading the Gazebo Assessment world -->
+  
+  <!-- Setting world to assessment world and locating path for it-->
+  <arg name="world_name" default="$(find assessment_world)/worlds/assessment.world"/>
+
+  <!-- Including empty world to be loaded from gazebo_ros package -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  
+    <!-- Ensuring "world_name" argument is being included to launch file. -->
+    <arg name="world_name" value="$(arg world_name)"/>
+   
+    <!-- Setting other arguments for simulation. -->
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="True"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="false"/>
+    <arg name="headless" value="false"/>
+    <arg name="verbose" value="True"/>
+  </include>
+</launch>
