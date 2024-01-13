@@ -20,6 +20,9 @@
   <!-- Includes plugin file created  --> 
   <xacro:include filename="$(find robot_model_pkg)/urdf/robot_gaz_drive.xacro"/>
 
+    <!-- Includes lidar created  --> 
+  <xacro:include filename="$(find robot_model_pkg)/urdf/lidar.xacro"/>
+
     <!-- Setting inertial for shapes so the model maintain common values  -->
   <xacro:macro name="cylinder_inertia" params="m r h">
     <inertial>
