@@ -40,6 +40,19 @@
 
       <!-- Setting frame odometry data -->
       <odometryFrame>odom</odometryFrame>
+
+      <!-- Setting frame odometry data -->
+      <odometryFrame>odom</odometryFrame>
+      
+       <!-- Sending wheel TF data -->
+      <publishWheelTF>true</publishWheelTF>
+
+      <!-- Sending odometry TF data -->
+      <publishOdomTF>true</publishOdomTF>
+
+      <!-- Sending all TF data -->
+      <publishTf>true</publishTf>
+
     </plugin>
   </gazebo>
  
