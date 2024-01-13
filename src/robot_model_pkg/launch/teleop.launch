@@ -1,1 +1,16 @@
+<?xml version="1.0"?>
+<launch>
 
+  <!-- Launch file for teleoperation of robot-->
+  
+  	<!-- Creating ROS node teleop to run teleop_twist_keyboard.py script from the default package teleop_twist_keyboard-->
+  <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+  
+  	<!-- Sending messages from /cmd_vel to /robot/controller/cmd_vel -->
+        <remap from="/cmd_vel" to="/robot/controller/cmd_vel"/>
+        
+ <!-- Learning Point: cmd_vel for robot controller needs to be properly defined and ensure messages are sent to correct node otherwise error will be caused of not being able to move robot  -->
+        
+  </node>
+  
+</launch>
