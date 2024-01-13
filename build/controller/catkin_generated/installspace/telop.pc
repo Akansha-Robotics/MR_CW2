@@ -1,0 +1,8 @@
+prefix=/home/akansha12/robot_ws/install
+
+Name: telop
+Description: Description of telop
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
