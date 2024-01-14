@@ -156,7 +156,7 @@
   </joint>
 
 
-<!-- Left guidance: used to represent left side of robot -->
+<!-- Left guide: present left side of robot -->
 <link name="left_guide">
   <xacro:box_inertia m="1" w="${base_len}" h="${base_width}" d="0.01"/>
   <visual>
@@ -179,7 +179,7 @@
   </link>
 
 
-  <!-- Left guidance: connecting link along with adding visual and collusion parameters  -->
+  <!-- Left guide: connecting link along with adding visual and collusion parameters  -->
   <joint name="left_guide_joint" type="fixed">
     <origin xyz="-0.2 0.5 0.0" rpy="0 0 0" />
     <parent link="base"/>
@@ -194,7 +194,7 @@
   </collision>
 </link>
 
-<!-- Left guidance: connecting link to base-->
+<!-- Left guide: connecting link to base-->
 <joint name="left_guide_joint" type="fixed">
   <origin xyz="-0.2 0.15 0.06" rpy="0 0 0" />
   <parent link="base"/>
@@ -202,7 +202,7 @@
 </joint>
 
 
-<!--Right guidance: used to represent right side of robot -->
+<!--Right guide: present right side of robot -->
 <link name="right_guide">
   <xacro:box_inertia m="1" w="${base_len}" h="${base_width}" d="0.01"/>
   <visual>
@@ -224,7 +224,7 @@
     </collision>
   </link>
 
-  <!-- Right guidance: connecting link along with adding visual and collusion parameters  -->
+  <!-- Right guide: connecting link along with adding visual and collusion parameters  -->
   <joint name="right_guide_joint" type="fixed">
     <origin xyz="-0.2 0.15 0.06" rpy="0 0 0" />
     <parent link="base"/>
@@ -239,7 +239,7 @@
   </collision>
 </link>
 
-<!-- Right guidance: connecting link to base-->
+<!-- Right guide: connecting link to base-->
 <joint name="right_guide_joint" type="fixed">
   <origin xyz="-0.2 -0.15 0.06" rpy="0 0 0" />
   <parent link="base"/>
